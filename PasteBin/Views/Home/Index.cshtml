@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model Pastebin
+
+<div id="wrapper">
+
+    <form method="POST">
+        <input type="text" runat="server" name="name" class="question" id="nme" required autocomplete="off" value="@Model.Name" />
+        <label for="nme"><span>Password for your code</span></label>
+        <br>
+        <textarea name="message" runat="server" rows="2" class="question" id="msg" required autocomplete="off" oninput="auto_grow(this)" style="resize:none; overflow:hidden">@Model.Code</textarea>
+        <label for="msg" id="mess"><span>Place your code here</span></label>
+
+        <form class="example" action="" style="margin:auto;max-width:300px">
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                <input type="submit" value="Send code" /> <br /><hr />
+            }
+        </form>
+    </form>
+
+</div>

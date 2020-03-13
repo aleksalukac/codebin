@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Code";
+}
+@model Pastebin
+
+<div id="wrapper">
+
+    <form>
+        <input type="text" runat="server" name="name" class="question" id="nme" required autocomplete="off" value="@Model.Name" />
+        <label for="nme"><span>Password</span></label>
+        <br>
+        <textarea name="message" runat="server" rows="2" class="question" id="msg" required autocomplete="off" oninput="auto_grow(this)" onmouseover="auto_grow(this)" style="resize:none; overflow:hidden; min-height=200px;">@Model.Code</textarea>
+        <!--button value="Extend" onclick="extend()"></!--button-->
+        <label for="msg" id="mess"><span>Code</span></label>
+
+    </form>
+</div>
